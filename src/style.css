@@ -33,25 +33,37 @@ form input {
 }
 h1 {
   font-size: 30px;
+  margin: 20px 0;
 }
 p {
   color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
+  font-size: 18px;
 }
-.temperature-display {
-  display: flex;
-}
+
 .temperature-icon {
   font-size: 55px;
+  position: relative;
+  top: 10px;
 }
 .temperature-value {
   font-size: 80px;
+  position: relative;
+  top: 15px;
 }
 .temperature-unit {
-  font-size: 38px;
+  font-size: 30px;
+  position: relative;
+  top: -15px;
+}
+.temperature-description {
+  position: relative;
+
+  font-size: 18px;
+  color: rgba(39, 33, 66, 0.6);
 }
 footer {
   text-align: center;
   border-top: 1px solid bisque;
   padding-top: 30px;
+  opacity: 0.9;
 }
