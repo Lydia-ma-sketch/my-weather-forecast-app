@@ -51,6 +51,7 @@ strong {
 }
 .temperature-value {
   font-size: 80px;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   position: relative;
   top: 15px;
