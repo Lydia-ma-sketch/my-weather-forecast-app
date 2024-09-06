@@ -2,7 +2,7 @@ body {
   background-color: #53a8b6;
 }
 .app-container {
-  background-color: whitesmoke;
+  background-color: #bbe4e9;
   max-width: 600px;
   padding: 20px;
   border-radius: 10px;
@@ -20,7 +20,7 @@ form input {
   border-radius: 6px;
 }
 .search-input {
-  background-color: #bbe4e9;
+  background-color: #e4f1fe;
   width: 70%;
 }
 .search-button {
