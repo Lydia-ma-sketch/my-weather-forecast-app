@@ -15,8 +15,9 @@ function updateWeather(response) {
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
   //update temperature-icon
-  /* let icon = document.querySelector("#temperature-icon");
-  icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;*/
+  let icon = document.querySelector("#temperature-icon");
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="temperature-icon"
+  />`;
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
