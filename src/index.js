@@ -18,3 +18,5 @@ function handleSearch(event) {
 // The event will be triggered by clicking the button or pressing enter
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
+//set default city
+searchCity("Taunggyi");
