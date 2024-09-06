@@ -8,6 +8,15 @@ function updateWeather(response) {
   //update temperature description
   let description = document.querySelector("#temperature-description");
   description.innerHTML = response.data.condition.description;
+  //update humidity
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+  //update wind-speed
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+  //update temperature-icon
+  /* let icon = document.querySelector("#temperature-icon");
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;*/
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";

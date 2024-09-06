@@ -33,12 +33,17 @@
           <div>
             <h1></h1>
             <p>
-              September 4, 2024 <br />Humidity: <strong>87%</strong> Wind:
-              <strong>5km/h</strong>
+              September 4, 2024 <br />Humidity:
+              <strong id="humidity">87%</strong> Wind:
+              <strong id="wind-speed">5km/h</strong>
             </p>
           </div>
           <div class="temperature-display">
-            <span class="temperature-icon">🌥</span>
+            <span class="temperature-icon" id="temperature-icon"
+              ><img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+                alt=""
+            /></span>
             <span class="temperature-value" id="temperature-value"></span>
             <span class="temperature-unit">°C</span>
             <br /><span
