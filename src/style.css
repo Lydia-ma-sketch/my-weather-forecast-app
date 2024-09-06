@@ -33,13 +33,14 @@ form input {
   justify-content: space-between;
 }
 h1 {
-  font-size: 30px;
+  font-size: 35px;
   color: #00204a;
   margin: 20px 0;
 }
 p {
   color: rgba(39, 33, 66, 0.4);
-  font-size: 17px;
+  font-size: 17.5px;
+  line-break: auto;
 }
 strong {
   color: #00204a;
@@ -50,7 +51,7 @@ strong {
   top: 10px;
 }
 .temperature-value {
-  font-size: 80px;
+  font-size: 75px;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   position: relative;
