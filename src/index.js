@@ -1,9 +1,13 @@
 function updateWeather(response) {
+  //update temperature value
   let temperature = document.querySelector("#temperature-value");
   temperature.innerHTML = Math.round(response.data.temperature.current);
-
+  //update city
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
+  //update temperature description
+  let description = document.querySelector("#temperature-description");
+  description.innerHTML = response.data.condition.description;
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
