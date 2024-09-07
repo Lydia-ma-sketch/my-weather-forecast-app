@@ -47,10 +47,11 @@ strong {
   color: #00204a;
 }
 .temperature-icon {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   position: relative;
-  top: 25px;
+  top: 35px;
+  left: 5px;
 }
 .temperature-value {
   font-size: 70px;
@@ -67,6 +68,7 @@ strong {
 .temperature-description {
   position: relative;
   left: 15px;
+  top: 5px;
   color: #005792;
   opacity: 0.6;
   font-size: 18px;
