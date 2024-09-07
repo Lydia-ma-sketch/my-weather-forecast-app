@@ -66,6 +66,7 @@ strong {
 }
 .temperature-description {
   position: relative;
+  left: 15px;
   color: #005792;
   opacity: 0.6;
   font-size: 18px;

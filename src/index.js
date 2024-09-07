@@ -1,3 +1,11 @@
+function formatDateTime() {
+  let date = new date();
+}
+//Capitalize first letter of temperature description
+function capitalizeFirstLetter(str) {
+  if (!str) return ""; //handle empty strings
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 function updateWeather(response) {
   //update temperature value
   let temperature = document.querySelector("#temperature-value");
@@ -7,7 +15,9 @@ function updateWeather(response) {
   h1.innerHTML = response.data.city;
   //update temperature description
   let description = document.querySelector("#temperature-description");
-  description.innerHTML = response.data.condition.description;
+  description.innerHTML = capitalizeFirstLetter(
+    response.data.condition.description
+  );
   //update humidity
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
@@ -20,7 +30,7 @@ function updateWeather(response) {
   />`;
   //update date&time
   let dateTime = document.querySelector("#date-time");
-  dateTime.innerHTML = formatDateTime;
+  dateTime.innerHTML = formatDateTime();
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
