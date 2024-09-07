@@ -18,6 +18,9 @@ function updateWeather(response) {
   let icon = document.querySelector("#temperature-icon");
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="temperature-icon"
   />`;
+  //update date&time
+  let dateTime = document.querySelector("#date-time");
+  dateTime.innerHTML = formatDateTime;
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
