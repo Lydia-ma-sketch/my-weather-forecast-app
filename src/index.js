@@ -1,5 +1,20 @@
-function formatDateTime() {
-  let date = new date();
+function formatDateTime(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 //Capitalize first letter of temperature description
 function capitalizeFirstLetter(str) {
@@ -29,8 +44,9 @@ function updateWeather(response) {
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="temperature-icon"
   />`;
   //update date&time
+  let date = new Date(response.data.time * 1000);
   let dateTime = document.querySelector("#date-time");
-  dateTime.innerHTML = formatDateTime();
+  dateTime.innerHTML = formatDateTime(date);
 }
 function searchCity(city) {
   let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
