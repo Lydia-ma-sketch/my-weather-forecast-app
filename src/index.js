@@ -1,16 +1,16 @@
 function formatDateTime(date) {
   let hours = date.getHours();
+  //Determine AM or PM
+  let ampm = "a.m";
+  if (hours >= 12) {
+    ampm = "p.m";
+  }
   //Convert hours from 24-hour format to 12-hour format
   hours = hours % 12;
   if (hours == 0) {
     hours = 12; //if hours is 0, set it to 12
   }
-  //Determine AM or PM
-  if (hours >= 12) {
-    let ampm = "p.m";
-  } else {
-    ampm = "a.m";
-  }
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`; //set minutes to two-digits
