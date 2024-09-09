@@ -25,7 +25,7 @@ function formatDateTime(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day}, ${hours}:${minutes}${ampm}`;
+  return `${day} ${hours}:${minutes} ${ampm}`;
 }
 //Capitalize first letter of temperature description
 function capitalizeFirstLetter(str) {
