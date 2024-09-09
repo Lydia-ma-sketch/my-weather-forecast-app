@@ -46,6 +46,9 @@ p {
 strong {
   color: #0092ca;
 }
+.temperature-display {
+  font-family: "Roboto", sans-serif;
+}
 .temperature-icon {
   width: 80px;
   height: 80px;
@@ -55,23 +58,23 @@ strong {
 }
 .temperature-value {
   font-size: 70px;
-  font-family: "Roboto", sans-serif;
   font-weight: bold;
   position: relative;
   top: 10px;
 }
 .temperature-unit {
-  font-size: 30px;
+  font-size: 35px;
   position: relative;
   top: -15px;
+  left: -7px;
 }
 .temperature-description {
   position: relative;
-  left: 15px;
+  left: 23px;
   top: 5px;
   color: #005792;
   opacity: 0.6;
-  font-size: 18px;
+  font-size: 17px;
 }
 footer {
   text-align: center;
