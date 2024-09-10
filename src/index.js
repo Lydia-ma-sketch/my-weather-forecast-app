@@ -12,7 +12,7 @@ function formatDateTime(date) {
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `0${minutes}`; //set (1-9)minutes to two-digits
+    minutes = `0${minutes}`; //make (0-9)minutes two-digits
   }
   let days = [
     "Sunday",
