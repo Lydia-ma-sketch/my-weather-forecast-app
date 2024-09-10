@@ -73,13 +73,47 @@ strong {
   left: 23px;
   top: 5px;
   color: #005792;
+  color: rgb(255, 191, 0);
   opacity: 0.6;
   font-size: 17px;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+.weather-forecast-day {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+}
+.weather-forecast-icon {
+  text-align: center;
+  position: relative;
+  top: -20px;
+}
+.weather-forecast-image {
+  width: 70px;
+  height: 70px;
+}
+.weather-forecast-temperatures {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10px;
+  color: #0092ca;
+  font-size: 14px;
+  position: relative;
+  top: -40px;
+}
+.weather-forecast-temperature-2 {
+  color: rgb(255, 191, 0);
+  opacity: 0.6;
 }
 footer {
   text-align: center;
   border-top: 1px solid #53a8b6;
-  padding-top: 30px;
+  padding-top: 20px;
   opacity: 0.9;
 }
 a {
