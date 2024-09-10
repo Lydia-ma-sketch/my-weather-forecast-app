@@ -10,10 +10,9 @@ function formatDateTime(date) {
   if (hours == 0) {
     hours = 12; //if hours is 0, set it to 12
   }
-
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `0${minutes}`; //set minutes to two-digits
+    minutes = `0${minutes}`; //set (1-9)minutes to two-digits
   }
   let days = [
     "Sunday",
