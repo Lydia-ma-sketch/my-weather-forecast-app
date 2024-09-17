@@ -62,12 +62,11 @@ function updateWeather(response) {
 function updateForecast(response) {
   console.log(response.data);
   let foreCastHtml = "";
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day, response) {
+  response.data.daily.forEach(function (day) {
     foreCastHtml =
       foreCastHtml +
       `<div class="weather-forecast-by-day">
-            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-day">Tue</div>
             <div class="weather-forecast-icon">
               <img
                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
@@ -77,9 +76,11 @@ function updateForecast(response) {
             </div>
             <div class="weather-forecast-temperatures">
               <div class="weather-forecast-temperature-1">
-                <strong>${response.data.daily.temperature.maximum}</strong>
+                <strong>${Math.round(day.temperature.maximum)}</strong>
               </div>
-              <div class="weather-forecast-temperature-2">19</div>
+              <div class="weather-forecast-temperature-2">${Math.round(
+                day.temperature.minimum
+              )}</div>
             </div>
           </div>`;
     let forecastElement = document.querySelector("#forecast");
