@@ -53,27 +53,17 @@ function updateWeather(response) {
   let icon = document.querySelector("#temperature-icon");
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="temperature-icon"
   />`;
-  console.log(response.data.condition.icon_url);
   //update date&time
   let date = new Date(response.data.time * 1000);
   let dateTime = document.querySelector("#date-time");
   dateTime.innerHTML = formatDateTime(date);
 }
-function searchCity(city) {
-  let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(updateWeather);
-}
-function handleSearch(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-input");
-  searchCity(city.value);
-}
 //inject weather forecast HTML from Javascript
-function displayForecast() {
+function updateForecast(response) {
+  console.log(response.data);
   let foreCastHtml = "";
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
+  days.forEach(function (day, response) {
     foreCastHtml =
       foreCastHtml +
       `<div class="weather-forecast-by-day">
@@ -87,7 +77,7 @@ function displayForecast() {
             </div>
             <div class="weather-forecast-temperatures">
               <div class="weather-forecast-temperature-1">
-                <strong>23</strong>
+                <strong>${response.data.daily.temperature.maximum}</strong>
               </div>
               <div class="weather-forecast-temperature-2">19</div>
             </div>
@@ -96,9 +86,24 @@ function displayForecast() {
     forecastElement.innerHTML = foreCastHtml;
   });
 }
+function searchCity(city) {
+  let apiKey = "ec3f3cc5ba623cbcd7873aab4b1c3t0o";
+  //current weather API
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(updateWeather);
+  //weather forecast API
+  let forecastApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(forecastApiUrl).then(updateForecast);
+}
+function handleSearch(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-input");
+  searchCity(city.value);
+}
+
 // The event will be triggered by clicking the button or pressing enter
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 //set default city
 searchCity("Taunggyi");
-displayForecast();
+updateForecast();
