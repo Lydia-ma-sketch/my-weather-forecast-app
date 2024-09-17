@@ -69,7 +69,7 @@ function updateForecast(response) {
             <div class="weather-forecast-day">Tue</div>
             <div class="weather-forecast-icon">
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                src="${day.condition.icon_url}"
                 alt=""
                 class="weather-forecast-image"
               />
