@@ -60,13 +60,12 @@ function updateWeather(response) {
 }
 //convert unix timestamp to day
 function formatDay(timestamp) {
-  let day = new Date(timestamp * 1000);
+  let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day.getDay()];
+  return days[date.getDay()];
 }
 //inject weather forecast HTML from Javascript
 function updateForecast(response) {
-  console.log(response.data);
   let foreCastHtml = "";
   response.data.daily.forEach(function (day, index) {
     if (index < 5) {
@@ -115,4 +114,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 //set default city
 searchCity("Taunggyi");
-updateForecast();
