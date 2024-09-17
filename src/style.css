@@ -4,7 +4,7 @@ body {
 .app-container {
   background-color: #bbe4e9;
   max-width: 600px;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   margin: 20px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -33,7 +33,7 @@ form input {
   justify-content: space-between;
 }
 h1 {
-  font-size: 40px;
+  font-size: 38px;
   color: #00204a;
   margin: 20px 0;
 }
