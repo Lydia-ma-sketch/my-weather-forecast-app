@@ -69,8 +69,36 @@ function handleSearch(event) {
   let city = document.querySelector("#search-input");
   searchCity(city.value);
 }
+//inject weather forecast HTML from Javascript
+function displayForecast() {
+  let foreCastHtml = "";
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    foreCastHtml =
+      foreCastHtml +
+      `<div class="weather-forecast-by-day">
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                alt=""
+                class="weather-forecast-image"
+              />
+            </div>
+            <div class="weather-forecast-temperatures">
+              <div class="weather-forecast-temperature-1">
+                <strong>23</strong>
+              </div>
+              <div class="weather-forecast-temperature-2">19</div>
+            </div>
+          </div>`;
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = foreCastHtml;
+  });
+}
 // The event will be triggered by clicking the button or pressing enter
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 //set default city
 searchCity("Taunggyi");
+displayForecast();
