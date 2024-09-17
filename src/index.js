@@ -58,15 +58,22 @@ function updateWeather(response) {
   let dateTime = document.querySelector("#date-time");
   dateTime.innerHTML = formatDateTime(date);
 }
+//convert unix timestamp to day
+function formatDay(timestamp) {
+  let day = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day.getDay()];
+}
 //inject weather forecast HTML from Javascript
 function updateForecast(response) {
   console.log(response.data);
   let foreCastHtml = "";
-  response.data.daily.forEach(function (day) {
-    foreCastHtml =
-      foreCastHtml +
-      `<div class="weather-forecast-by-day">
-            <div class="weather-forecast-day">Tue</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      foreCastHtml =
+        foreCastHtml +
+        `<div class="weather-forecast-by-day">
+            <div class="weather-forecast-day">${formatDay(day.time)}</div>
             <div class="weather-forecast-icon">
               <img
                 src="${day.condition.icon_url}"
@@ -83,6 +90,7 @@ function updateForecast(response) {
               )}</div>
             </div>
           </div>`;
+    }
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = foreCastHtml;
   });
