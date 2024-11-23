@@ -1,9 +1,9 @@
 function formatDateTime(date) {
   let hours = date.getHours();
   //Determine AM or PM
-  let ampm = "a.m";
+  let ampm = "AM";
   if (hours >= 12) {
-    ampm = "p.m";
+    ampm = "PM";
   }
   //Convert hours from 24-hour format to 12-hour format
   hours = hours % 12;
@@ -24,7 +24,7 @@ function formatDateTime(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes} ${ampm}`;
+  return `${day}, ${hours}:${minutes} ${ampm}`;
 }
 //Capitalize first letter of temperature description
 function capitalizeFirstLetter(str) {
