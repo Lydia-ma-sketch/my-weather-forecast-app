@@ -83,7 +83,7 @@ strong {
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin: 30px 0 15px;
+  margin: 15px 0 15px;
   font-family: "Roboto", sans-serif;
   font-size: 17px;
 }
