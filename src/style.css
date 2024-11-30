@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #e4f1fe;
+  background-color: #e4f4fe;
 }
 .app-container {
   background-color: white;
@@ -21,7 +21,7 @@ form input {
   border-radius: 6px;
 }
 .search-input {
-  background-color: #e4f1fe;
+  background-color: #e4f4fe;
   width: 70%;
 }
 .search-button {
